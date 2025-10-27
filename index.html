@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Guilherme Manoel — Portfólio</title>
+    <meta name="description" content="Portfólio de Guilherme Manoel: projetos, habilidades e contato." />
+
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CDN + config -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Sora', 'system-ui', 'sans-serif'] },
+                    colors: {
+                        brand: '#033f57',
+                        base: '#000000'
+                    },
+                    boxShadow: {
+                        card: '0 10px 30px rgba(3,63,87,0.25)',
+                        glow: '0 0 0 1px rgba(3,63,87,0.35), 0 8px 30px rgba(3,63,87,0.45)'
+                    },
+                    keyframes: {
+                        floatY: { '0%,100%': { transform: 'translateY(0)' }, '50%': { transform: 'translateY(-6px)' } },
+                        reveal: { '0%': { opacity: 0, transform: 'translateY(14px)' }, '100%': { opacity: 1, transform: 'translateY(0)' } }
+                    },
+                    animation: {
+                        floatY: 'floatY 6s ease-in-out infinite',
+                        reveal: 'reveal .7s ease forwards'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+
+<body class="bg-base text-white selection:bg-brand/60 selection:text-white font-sans">
+    <!-- Navbar -->
+    <header
+        class="sticky top-0 z-40 backdrop-blur supports-[backdrop-filter]:bg-base/70 bg-base/70 border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#inicio" class="group flex items-center gap-3">
+                <div class="h-8 w-8 rounded-lg bg-brand/20 ring-1 ring-brand/40 grid place-items-center">
+                    <span class="text-brand font-extrabold">G</span>
+                </div>
+                <span class="font-semibold tracking-wide">Guilherme <span class="text-brand">Manoel</span></span>
+            </a>
+
+            <nav class="hidden md:flex items-center gap-6 text-sm">
+                <a href="#projetos"
+                    class="text-white/75 hover:text-white transition will-change-transform hover:-translate-y-0.5">Projetos</a>
+                <a href="#habilidades"
+                    class="text-white/75 hover:text-white transition will-change-transform hover:-translate-y-0.5">Habilidades</a>
+                <a href="#sobre"
+                    class="text-white/75 hover:text-white transition will-change-transform hover:-translate-y-0.5">Sobre</a>
+                <a href="#contato"
+                    class="text-white/75 hover:text-white transition will-change-transform hover:-translate-y-0.5">Contato</a>
+                <a href="#" id="dl-cv"
+                    class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold ring-1 ring-white/20 bg-white/5 text-white hover:ring-brand/60 transition">
+                    Baixar CV
+                </a>
+            </nav>
+
+            <button id="menuBtn"
+                class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-lg ring-1 ring-white/15 hover:ring-brand/60 transition">
+                <span class="sr-only">Abrir menu</span> ☰
+            </button>
+        </div>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu"
+            class="md:hidden origin-top scale-y-0 opacity-0 pointer-events-none transition-all duration-200">
+            <div class="px-6 pb-4 space-y-2 text-sm">
+                <a href="#projetos" class="block py-2 text-white/80 hover:text-white">Projetos</a>
+                <a href="#habilidades" class="block py-2 text-white/80 hover:text-white">Habilidades</a>
+                <a href="#sobre" class="block py-2 text-white/80 hover:text-white">Sobre</a>
+                <a href="#contato" class="block py-2 text-white/80 hover:text-white">Contato</a>
+                <a href="#" id="dl-cv-mobile"
+                    class="inline-flex mt-2 items-center justify-center rounded-xl px-4 py-2 font-semibold ring-1 ring-white/20 bg-white/5 text-white hover:ring-brand/60 transition">
+                    Baixar CV
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="relative">
+        <div class="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_top,rgba(3,63,87,0.35),transparent_60%)]">
+        </div>
+        <div class="max-w-7xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+            <div class="space-y-6">
+                <span class="inline-flex items-center gap-2 text-xs uppercase tracking-widest text-white/70">
+                    <span class="h-1.5 w-1.5 rounded-full bg-brand"></span> Desenvolvedor • Tech & Produto
+                </span>
+                <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">
+                    Olá, eu sou <span class="text-brand">Guilherme Manoel</span>.<br />
+                    Construo experiências web <span class="text-white/80">rápidas</span> e <span
+                        class="text-white/80">escaláveis</span>.
+                </h1>
+                <p class="text-white/70 max-w-prose">
+                    Programador com vasta experiência em front-end e soluções no-Code.
+                    Foco em performance, acessibilidade e DX — com processos sólidos de versionamento, testes e CI/CD.
+                </p>
+                <div class="flex flex-wrap gap-3">
+                    <a href="#projetos"
+                        class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold ring-1 ring-white/10 text-white bg-gradient-to-b from-brand/90 to-brand/70 shadow-[0_10px_25px_rgba(3,63,87,.35)] hover:brightness-110 hover:-translate-y-0.5 transition">Ver
+                        Projetos</a>
+
+                    <a href="https://github.com/" target="_blank" rel="noopener"
+                        class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold ring-1 ring-white/18 bg-white/5 text-white hover:ring-brand/70 transition">GitHub</a>
+                </div>
+            </div>
+
+            <div class="relative md:justify-self-end">
+                <div
+                    class="h-64 md:h-80 w-full md:w-[460px] rounded-2xl bg-gradient-to-b from-brand/20 to-transparent ring-1 ring-white/10 p-0.5">
+                    <div
+                        class="h-full w-full rounded-2xl bg-base/60 backdrop-blur border border-white/10 grid place-items-center">
+                        <div class="text-center px-8 animate-floatY">
+                            <div class="text-7xl mb-4">🚀</div>
+                            <p class="text-white/70">Disponível para projetos e parcerias</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="pointer-events-none absolute -inset-1 rounded-3xl blur-xl bg-brand/20"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projetos -->
+    <section id="projetos" class="py-16 md:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-8">
+                <div>
+                    <h2 class="text-2xl md:text-3xl font-bold">Projetos em Destaque</h2>
+                    <p class="text-white/70">Alguns trabalhos selecionados. Use os filtros para explorar.</p>
+                </div>
+                <div class="flex flex-wrap gap-2">
+                    <button
+                        class="chip active inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-2 font-semibold text-white/90 hover:border-brand/70 transition data-[active=true]:border-brand/90 data-[active=true]:bg-brand/20"
+                        data-filter="all" data-active="true">Todos</button>
+                    <button
+                        class="chip inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-2 font-semibold text-white/90 hover:border-brand/70 transition"
+                        data-filter="web">Web</button>
+                    <button
+                        class="chip inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-2 font-semibold text-white/90 hover:border-brand/70 transition"
+                        data-filter="app">Apps</button>
+                    <button
+                        class="chip inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-2 font-semibold text-white/90 hover:border-brand/70 transition"
+                        data-filter="dados">Dados/BI</button>
+                </div>
+            </div>
+
+            <div id="grid-projetos" class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <article
+                    class="project opacity-0 translate-y-3 [&.in]:animate-reveal rounded-2xl border border-white/15 bg-white/[.03] shadow-card overflow-hidden group transition-transform duration-300">
+
+                    <!-- Imagem de fundo -->
+                    <div class="h-40 bg-center bg-cover border-b border-white/10 transition-transform duration-500 group-hover:scale-105"
+                        style="background-image: url('./assets/img/novea.png');">
+                    </div>
+
+                    <div class="p-5" data-tags="web">
+                        <h3 class="font-semibold text-lg">NOVEA SOLUCOES EMPRESARIAIS</h3>
+                        <p class="text-sm text-white/70 mt-1">Escritório de Contabilidade</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span
+                                class="inline-block text-xs px-2.5 py-1 rounded-full bg-brand/30 border border-brand/60">•
+                                Html • Tailwind • JavaScript • PHP</span>
+                            <a href="https://www.novea.com.br"
+                                class="btn-link text-brand font-semibold underline underline-offset-4 hover:opacity-80 transition">
+                                Ver
+                            </a>
+
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article
+                    class="project opacity-0 translate-y-3 [&.in]:animate-reveal rounded-2xl border border-white/15 bg-white/[.03] shadow-card overflow-hidden group transition-transform duration-300">
+
+                    <!-- Imagem de fundo -->
+                    <div class="h-40 bg-center bg-cover border-b border-white/10 transition-transform duration-500 group-hover:scale-105"
+                        style="background-image: url('./assets/img/acheumcontador.png');">
+                    </div>
+
+                    <div class="p-5" data-tags="web">
+                        <h3 class="font-semibold text-lg">ACHE UM CONTADOR</h3>
+                        <p class="text-sm text-white/70 mt-1">Plataforma para Contadores</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span
+                                class="inline-block text-xs px-2.5 py-1 rounded-full bg-brand/30 border border-brand/60">• Html • Tailwind • JavaScript </span>
+                        
+                             <a href="https://acheumcontador.com.br"
+                                class="btn-link text-brand font-semibold underline underline-offset-4 hover:opacity-80 transition">
+                                Ver
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+
+                <!-- Card 3 -->
+                <article
+                    class="project opacity-0 translate-y-3 [&.in]:animate-reveal rounded-2xl border border-white/15 bg-white/[.03] shadow-card overflow-hidden">
+                    <div
+                        class="h-40 bg-[linear-gradient(135deg,rgba(3,63,87,.45),rgba(3,63,87,.1))] border-b border-white/10">
+                    </div>
+                    <div class="p-5" data-tags="dados">
+                        <h3 class="font-semibold text-lg">LB ENGENHARIA</h3>
+                        <p class="text-sm text-white/70 mt-1">Pipeline robusto e relatórios automatizados.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span
+                                class="inline-block text-xs px-2.5 py-1 rounded-full bg-brand/30 border border-brand/60">Bubble/No-Code</span>
+                            <button class="btn-link text-brand font-semibold underline underline-offset-4"
+                                data-modal='{"title":"ETL + BI","desc":"Ingestão incremental, normalização e modelo estrela.","img":"./assets/preview3.webp","stack":"Python • Airflow • Metabase"}'>Preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article
+                    class="project opacity-0 translate-y-3 [&.in]:animate-reveal rounded-2xl border border-white/15 bg-white/[.03] shadow-card overflow-hidden">
+                    <div
+                        class="h-40 bg-[linear-gradient(135deg,rgba(3,63,87,.45),rgba(3,63,87,.1))] border-b border-white/10">
+                    </div>
+                    <div class="p-5" data-tags="dados">
+                        <h3 class="font-semibold text-lg">E-CONTADOR DIGITAL</h3>
+                        <p class="text-sm text-white/70 mt-1">Pipeline robusto e relatórios automatizados.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span
+                                class="inline-block text-xs px-2.5 py-1 rounded-full bg-brand/30 border border-brand/60">Bubble/No-Code</span>
+                            <button class="btn-link text-brand font-semibold underline underline-offset-4"
+                                data-modal='{"title":"ETL + BI","desc":"Ingestão incremental, normalização e modelo estrela.","img":"./assets/preview3.webp","stack":"Python • Airflow • Metabase"}'>Preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 5 -->
+                <article
+                    class="project opacity-0 translate-y-3 [&.in]:animate-reveal rounded-2xl border border-white/15 bg-white/[.03] shadow-card overflow-hidden">
+                    <div
+                        class="h-40 bg-[linear-gradient(135deg,rgba(3,63,87,.45),rgba(3,63,87,.1))] border-b border-white/10">
+                    </div>
+                    <div class="p-5" data-tags="dados">
+                        <h3 class="font-semibold text-lg">OUTBUG CURSOS</h3>
+                        <p class="text-sm text-white/70 mt-1">Pipeline robusto e relatórios automatizados.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span
+                                class="inline-block text-xs px-2.5 py-1 rounded-full bg-brand/30 border border-brand/60">Bubble/No-Code</span>
+                            <button class="btn-link text-brand font-semibold underline underline-offset-4"
+                                data-modal='{"title":"ETL + BI","desc":"Ingestão incremental, normalização e modelo estrela.","img":"./assets/preview3.webp","stack":"Python • Airflow • Metabase"}'>Preview</button>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 6 -->
+                <article
+                    class="project opacity-0 translate-y-3 [&.in]:animate-reveal rounded-2xl border border-white/15 bg-white/[.03] shadow-card overflow-hidden">
+                    <div
+                        class="h-40 bg-[linear-gradient(135deg,rgba(3,63,87,.45),rgba(3,63,87,.1))] border-b border-white/10">
+                    </div>
+                    <div class="p-5" data-tags="web">
+                        <h3 class="font-semibold text-lg">E-commerce Performance</h3>
+                        <p class="text-sm text-white/70 mt-1">SSR/SSG, code-split e cache CDN.</p>
+                        <div class="mt-4 flex items-center justify-between">
+                            <span
+                                class="inline-block text-xs px-2.5 py-1 rounded-full bg-brand/30 border border-brand/60">Web</span>
+                            <button class="btn-link text-brand font-semibold underline underline-offset-4"
+                                data-modal='{"title":"E-commerce","desc":"Páginas críticas com Edge e prefetch inteligente.","img":"./assets/preview6.webp","stack":"Next.js • Tailwind"}'>Preview</button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Habilidades -->
+    <section id="habilidades" class="py-16 md:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8">Habilidades</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <!-- Coluna 1 -->
+                <div class="rounded-2xl border border-white/15 bg-white/[.03] shadow-card p-6">
+                    <h3 class="font-semibold text-lg mb-4">Stack Principal</h3>
+                    <ul class="space-y-4">
+                        <li class="flex flex-col gap-1">
+                            <span class="font-semibold">HTML • CSS • Tailwind</span>
+                            <div class="h-2 rounded-full bg-white/10 border border-white/10 overflow-hidden">
+                                <i class="block h-full bg-gradient-to-r from-brand/95 to-brand/60"
+                                    style="width:95%"></i>
+                            </div>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <span class="font-semibold">JavaScript • TypeScript</span>
+                            <div class="h-2 rounded-full bg-white/10 border border-white/10 overflow-hidden">
+                                <i class="block h-full bg-gradient-to-r from-brand/95 to-brand/60"
+                                    style="width:90%"></i>
+                            </div>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <span class="font-semibold">React • Next.js</span>
+                            <div class="h-2 rounded-full bg-white/10 border border-white/10 overflow-hidden">
+                                <i class="block h-full bg-gradient-to-r from-brand/95 to-brand/60"
+                                    style="width:88%"></i>
+                            </div>
+                        </li>
+                        <li class="flex flex-col gap-1">
+                            <span class="font-semibold">Node • APIs REST</span>
+                            <div class="h-2 rounded-full bg-white/10 border border-white/10 overflow-hidden">
+                                <i class="block h-full bg-gradient-to-r from-brand/95 to-brand/60"
+                                    style="width:82%"></i>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Coluna 2 -->
+                <div class="rounded-2xl border border-white/15 bg-white/[.03] shadow-card p-6">
+                    <h3 class="font-semibold text-lg mb-4">Ferramentas & Processos</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span
+                            class="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold">Git
+                            & GitHub</span>
+                        <span
+                            class="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold">CI/CD</span>
+                        <span
+                            class="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold">A11y</span>
+                        <span
+                            class="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold">SEO</span>
+                        <span
+                            class="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold">Design
+                            System</span>
+                        <span
+                            class="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold">Testing</span>
+                        <span
+                            class="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold">Analytics</span>
+                        <span
+                            class="inline-block px-3 py-1.5 rounded-full bg-white/5 border border-white/15 text-white text-sm font-semibold">Docker</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="sobre" class="py-16 md:py-24 border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-10 items-start">
+            <div class="order-2 md:order-1 space-y-4">
+                <h2 class="text-2xl md:text-3xl font-bold">Sobre mim</h2>
+                <p class="text-white/80">Sou desenvolvedor com anos de experiência entregando soluções digitais
+                    end-to-end. Atuo desde a concepção e design técnico até deploy e observabilidade, sempre com foco em
+                    <b>negócio, qualidade e escala</b>.
+                </p>
+                <p class="text-white/70">Paixão por interfaces limpas, performance e código sustentável. Documentação,
+                    versionamento e ambientes de desenvolvimento que aceleram o time e reduzem bugs.</p>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="rounded-2xl border border-white/15 bg-white/[.03] shadow-card p-6">
+                    <h3 class="font-semibold text-lg">Resumo</h3>
+                    <ul class="mt-3 space-y-2 text-white/80">
+                        <li>• Foco: Front-end, UI/UX, integrações, SSR/SSG</li>
+                        <li>• Setores: SaaS, E-commerce, Educação, Finanças</li>
+                        <li>• Metodologias: Kanban/Scrum, PRs, code review</li>
+                        <li>• Idiomas: Português (nativo), Inglês (prof.)</li>
+                    </ul>
+                    <a href="#contato"
+                        class="mt-6 inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold ring-1 ring-white/10 text-white bg-gradient-to-b from-brand/90 to-brand/70 shadow-[0_10px_25px_rgba(3,63,87,.35)] hover:brightness-110 hover:-translate-y-0.5 transition">Disponível
+                        para novos projetos</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="py-16 md:py-24 border-t border-white/10">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="text-2xl md:text-3xl font-bold mb-8">Vamos conversar</h2>
+            <form id="contactForm" class="rounded-2xl border border-white/15 bg-white/[.03] shadow-card p-6 space-y-4">
+                <div class="grid md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block mb-1 text-white/75 text-sm">Seu nome</label>
+                        <input type="text" name="nome" required placeholder="Seu nome"
+                            class="w-full rounded-xl px-3.5 py-3 bg-white/5 border border-white/15 text-white placeholder:text-white/45 focus:outline-none focus:ring-4 focus:ring-brand/30 focus:border-brand/70 transition" />
+                    </div>
+                    <div>
+                        <label class="block mb-1 text-white/75 text-sm">Seu e-mail</label>
+                        <input type="email" name="email" required placeholder="voce@exemplo.com"
+                            class="w-full rounded-xl px-3.5 py-3 bg-white/5 border border-white/15 text-white placeholder:text-white/45 focus:outline-none focus:ring-4 focus:ring-brand/30 focus:border-brand/70 transition" />
+                    </div>
+                </div>
+                <div>
+                    <label class="block mb-1 text-white/75 text-sm">Mensagem</label>
+                    <textarea name="mensagem" rows="5" required placeholder="Conte um pouco sobre o projeto"
+                        class="w-full rounded-xl px-3.5 py-3 bg-white/5 border border-white/15 text-white placeholder:text-white/45 focus:outline-none focus:ring-4 focus:ring-brand/30 focus:border-brand/70 transition resize-y"></textarea>
+                </div>
+                <div class="flex flex-wrap items-center gap-3">
+                    <button type="submit"
+                        class="inline-flex items-center justify-center rounded-xl px-4 py-2 font-semibold ring-1 ring-white/10 text-white bg-gradient-to-b from-brand/90 to-brand/70 shadow-[0_10px_25px_rgba(3,63,87,.35)] hover:brightness-110 hover:-translate-y-0.5 transition">Enviar</button>
+
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10">
+        <div
+            class="max-w-7xl mx-auto px-6 py-8 text-sm text-white/60 flex flex-col md:flex-row items-center justify-between gap-3">
+            <p>© <span id="year"></span> Guilherme Manoel. Todos os direitos reservados.</p>
+            <div class="flex items-center gap-4">
+                <a href="#" class="text-white/75 hover:text-white transition">LinkedIn</a>
+                <a href="#" class="text-white/75 hover:text-white transition">GitHub</a>
+                <a href="#inicio"
+                    class="inline-flex items-center justify-center rounded-xl px-3 py-1.5 font-semibold ring-1 ring-white/20 bg-white/5 text-white hover:ring-brand/60 transition">Voltar
+                    ao topo</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal -->
+    <div id="modal" class="fixed inset-0 z-50 hidden">
+        <div class="absolute inset-0 bg-black/70"></div>
+        <div
+            class="relative max-w-3xl mx-auto my-10 md:my-16 bg-base border border-white/10 rounded-2xl shadow-glow overflow-hidden">
+            <div class="flex items-center justify-between p-4 border-b border-white/10">
+                <h3 id="modalTitle" class="font-semibold"></h3>
+                <button id="modalClose"
+                    class="inline-flex items-center justify-center rounded-xl px-3 py-1.5 font-semibold ring-1 ring-white/20 bg-white/5 text-white hover:ring-brand/60 transition">Fechar</button>
+            </div>
+            <div class="p-4 grid md:grid-cols-2 gap-4">
+                <img id="modalImg" alt="Preview do projeto"
+                    class="rounded-lg border border-white/10 object-cover w-full h-56 md:h-full">
+                <div>
+                    <p id="modalDesc" class="text-white/80"></p>
+                    <p class="text-sm text-white/60 mt-4"><b>Linguagens:</b> <span id="modalStack"></span></p>
+                </div>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="./app.js"></script>
+</body>
+
+</html>
